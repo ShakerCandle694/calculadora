@@ -1,7 +1,9 @@
 function mostrarInputs() {
     const figura = document.getElementById("figura").value;
     const container = document.getElementById("inputs-container");
+    const imagenContainer = document.getElementById("imagen-container");
     container.innerHTML = '';
+    imagenContainer.innerHTML = '';
 
     if (figura === "rectangulo" || figura === "cuadrado" || figura === "triangulo") {
         container.innerHTML += `
@@ -22,6 +24,27 @@ function mostrarInputs() {
             <label for="radio">Radio:</label>
             <input type="number" id="radio" required>
         `;
+    }
+
+    // Mostrar la imagen de la figura seleccionada
+    let imagenSrc = '';
+    switch (figura) {
+        case 'rectangulo':
+            imagenSrc = 'images/rectangulo.png';
+            break;
+        case 'cuadrado':
+            imagenSrc = 'images/cuadrado.png';
+            break;
+        case 'circulo':
+            imagenSrc = 'images/circulo.png';
+            break;
+        case 'triangulo':
+            imagenSrc = 'images/triangulo.png';
+            break;
+    }
+
+    if (imagenSrc) {
+        imagenContainer.innerHTML = `<img src="${imagenSrc}" alt="${figura}">`;
     }
 }
 

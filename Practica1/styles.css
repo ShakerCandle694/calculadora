@@ -37,3 +37,13 @@ button {
 #resultado {
     margin-top: 20px;
 }
+#imagen-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#imagen-container img {
+    max-width: 200px;
+    height: auto;
+    margin: 10px 0;
+}
